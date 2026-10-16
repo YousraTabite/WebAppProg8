@@ -11,9 +11,46 @@ const server =
 
       res.write('<html> <head> <title> Served </title> </head>')
       res.write('<body>')
-      res.write('Content \n')
-      res.write('More content \n')
-      res.write('Hello World')    
+     res.write(`
+<h2>Cities I Would Like to Visit</h2>
+<p>
+    The following cities are four destinations I would like to visit
+    in the future.
+</p>
+
+<table border="1">
+    <tr>
+        <th>City</th>
+        <th>Reason to Visit</th>
+        <th>Distance from Chefchaouen</th>
+        <th>Estimated Travel Cost</th>
+    </tr>
+    <tr>
+        <td>Tokyo, Japan</td>
+        <td>To experience Japanese culture, food, and technology.</td>
+        <td>About 11,000 km</td>
+        <td>About $1,200</td>
+    </tr>
+    <tr>
+        <td>Paris, France</td>
+        <td>To see the architecture, museums, and famous landmarks.</td>
+        <td>About 1,600 km</td>
+        <td>About $300</td>
+  </tr>
+  <tr>
+        <td>Rome, Italy</td>
+        <td>To explore its history, architecture, and Italian food.</td>
+        <td>About 1,900 km</td>
+        <td>About $350</td>
+    </tr>
+    <tr>
+        <td>Dubai, UAE</td>
+        <td>To experience the modern architecture and attractions.</td>
+        <td>About 5,800 km</td>
+        <td>About $600</td>
+    </tr>
+</table>
+`)
       res.end('</body></html>')
       //Close the response
     }                           
