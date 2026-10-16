@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yousra's Server Computation</title>
+</head>
+<body>
+    <h1>Yousra Tabite uses a fetch request</h1>
+
+    <label for="x">Enter x:</label>
+    <input type="number" id="x" step="any" value="1.1">
+    <br><br>
+
+    <label for="y">Enter y:</label>
+    <input type="number" id="y" step="any" value="2.2">
+    <br><br>
+
+    <button onclick="compute()">
+        Invoke computation on Server
+    </button>
+
+    <div id="result">Your result will appear here.</div>
+
+    <script>
+        function compute() {
+            const x = document.getElementById("x").value;
+            const y = document.getElementById("y").value;
+            const url = `http://127.0.0.1:3001/?x=${x}&y=${y}`;
+
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("result").textContent = data;
+                })
+                .catch(error => {
+                    document.getElementById("result").textContent =
+                        "Error fetching the result: " + error;
+                });
+        }
+    </script>
+</body>
+</html>

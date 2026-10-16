@@ -27,6 +27,7 @@ const resultY = Math.fround(y)
 
 res.statusCode = 200
 res.setHeader('Content-Type', 'text/plain')
+res.setHeader('Access-Control-Allow-Origin', '*')
 res.end(`Math.fround(${x}) is ${resultX} and Math.fround(${y}) is ${resultY}`)
         
       } else {
